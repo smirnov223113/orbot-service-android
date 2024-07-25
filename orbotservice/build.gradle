@@ -1,0 +1,55 @@
+apply plugin: 'com.android.library'
+apply from: "../commons.gradle"
+apply from : '../dependencies.gradle'
+
+android {
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 34
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        resources {
+            excludes += ['META-INF/androidx.localbroadcastmanager_localbroadcastmanager.version']
+        }
+    }
+
+
+    lint {
+        abortOnError true
+        checkReleaseBuilds false
+        disable 'InvalidPackage'
+        htmlReport true
+        lintConfig file('../lint.xml')
+        textReport false
+        xmlReport false
+    }
+    namespace 'org.torproject.android.service'
+}
+
+dependencies {
+    api libs.guardian_jtorctl
+
+    //use locally built ipt_proxy+go_tun2socks
+    api project(':OrbotLib')
+
+    api libs.tor_android
+
+    implementation(
+            libs.android_shell,
+            libs.androidx_core,
+            libs.androidx_localbroadcast,
+            libs.pcap_core,
+            libs.pcap_factory,
+            libs.androidx_work,
+            libs.androidx_work_kotlin
+    )
+
+    implementation files('../libs/geoip.jar')
+}
