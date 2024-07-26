@@ -4,6 +4,7 @@ apply from : '../dependencies.gradle'
 
 android {
     defaultConfig {
+
         minSdkVersion 23
         targetSdkVersion 34
     }
