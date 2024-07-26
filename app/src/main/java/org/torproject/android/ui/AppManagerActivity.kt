@@ -269,7 +269,8 @@ class AppManagerActivity : AppCompatActivity(), View.OnClickListener, OrbotConst
          */
         private fun includeAppInUi(applicationInfo: ApplicationInfo): Boolean {
             if (!applicationInfo.enabled) return false
-            return if (OrbotConstants.BYPASS_VPN_PACKAGES.contains(applicationInfo.packageName)) false else BuildConfig.APPLICATION_ID != applicationInfo.packageName
+            return false
+//            return if (OrbotConstants.BYPASS_VPN_PACKAGES.contains(applicationInfo.packageName)) false else BuildConfig.APPLICATION_ID != applicationInfo.packageName
         }
 
         fun getApps(

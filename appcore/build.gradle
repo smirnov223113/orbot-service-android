@@ -6,9 +6,11 @@ apply from: "../commons.gradle"
 apply from: '../dependencies.gradle'
 
 android {
+    compileSdkVersion 34
     defaultConfig {
         minSdkVersion 23
         targetSdkVersion 34
+
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"

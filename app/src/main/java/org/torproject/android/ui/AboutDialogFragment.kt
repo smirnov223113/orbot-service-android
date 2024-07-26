@@ -22,7 +22,7 @@ class AboutDialogFragment : DialogFragment() {
 
     companion object {
         const val TAG = "AboutDialogFragment"
-        const val VERSION = "${BuildConfig.VERSION_NAME} (Tor ${OrbotService.BINARY_TOR_VERSION})"
+//        const val VERSION = "${BuildConfig.VERSION_NAME} (Tor ${OrbotService.BINARY_TOR_VERSION})"
         private const val BUNDLE_KEY_TV_ABOUT_TEXT = "about_tv_txt"
         private const val ABOUT_LICENSE_EQUALSIGN =
             "==============================================================================="
@@ -34,7 +34,7 @@ class AboutDialogFragment : DialogFragment() {
         val view: View? = activity?.layoutInflater?.inflate(R.layout.layout_about, null)
 
         val versionName = view?.findViewById<TextView>(R.id.versionName)
-        versionName?.text = VERSION
+//        versionName?.text = VERSION
 
         tvAbout = view?.findViewById(R.id.aboutother) as TextView
 
@@ -57,7 +57,7 @@ class AboutDialogFragment : DialogFragment() {
                 aboutText =
                     aboutText.replace(ABOUT_LICENSE_EQUALSIGN, "\n").replace("\n\n", "<br/><br/>")
                         .replace("\n", "")
-                tvAbout.text = Html.fromHtml(aboutText, Html.FROM_HTML_MODE_LEGACY)
+//                tvAbout.text = Html.fromHtml(aboutText, Html.FROM_HTML_MODE_LEGACY)
             } catch (e: IOException) {
                 e.printStackTrace()
             }

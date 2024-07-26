@@ -30,14 +30,14 @@ public class OnionServiceContentProvider extends ContentProvider {
     };
 
     private static final int ONIONS = 1, ONION_ID = 2;
-    private static final String AUTH = BuildConfig.APPLICATION_ID + ".ui.v3onionservice";
+    private static final String AUTH = "org.torproject.android" + ".ui.v3onionservice";
     public static final Uri CONTENT_URI = Uri.parse("content://" + AUTH + "/v3");
     private static final UriMatcher uriMatcher;
 
     static {
         uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-        uriMatcher.addURI(AUTH, "v3", ONIONS);
-        uriMatcher.addURI(AUTH, "v3/#", ONION_ID);
+//        uriMatcher.addURI(AUTH, "v3", ONIONS);
+//        uriMatcher.addURI(AUTH, "v3/#", ONION_ID);
     }
 
     private OnionServiceDatabase mDatabase;

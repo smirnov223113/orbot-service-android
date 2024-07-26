@@ -3,6 +3,7 @@ apply from: "../commons.gradle"
 apply from : '../dependencies.gradle'
 
 android {
+    compileSdkVersion 34
     defaultConfig {
 
         minSdkVersion 23

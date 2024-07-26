@@ -1,6 +1,8 @@
+apply plugin: 'com.android.library'
 apply from: "../commons-device.gradle"
 apply plugin: 'kotlin-android'
 apply from : '../dependencies.gradle'
+
 
 /* gets the version name from the latest Git tag, stripping the leading v off */
 def getVersionName = { ->
@@ -17,11 +19,12 @@ static def versionCodeEpoch() {
 }
 
 android {
+    compileSdkVersion = 34
     defaultConfig {
-        applicationId "org.torproject.android"
+//        applicationId "org.torproject.android"
         versionName getVersionName()
         minSdkVersion 23
-        compileSdkVersion = 34
+
         targetSdkVersion 34
         multiDexEnabled true
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
@@ -46,7 +49,7 @@ android {
     productFlavors {
         fullperm {
             dimension "free"
-            applicationId 'org.torproject.android'
+//            applicationId 'org.torproject.android'
             versionCode 1732300100
             versionName getVersionName()
             archivesBaseName = "Orbot-${versionName}"
@@ -54,7 +57,7 @@ android {
 
         nightly {
             dimension "free"
-            applicationId 'org.torproject.android.nightly'
+//            applicationId 'org.torproject.android.nightly'
             versionName getVersionName()
             versionCode versionCodeEpoch()
             archivesBaseName = "Orbot-${versionName}"
