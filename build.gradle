@@ -1,5 +1,5 @@
 apply from: './dependencies.gradle'
-apply plugin: 'java'
+apply plugin: 'com.android.library'
 //apply plugin: 'maven-publish'
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
@@ -13,13 +13,7 @@ buildscript {
         mavenCentral()
         maven { url 'https://jitpack.io' }
     }
-    dependencyResolutionManagement {
-		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-		repositories {
-			mavenCentral()
-			maven { url 'https://jitpack.io' }
-		}
-	}
+
 
     dependencies {
         classpath "com.android.tools.build:gradle:$agp_version"
@@ -28,3 +22,16 @@ buildscript {
 		// in the individual module build.gradle files
     }
 }
+
+
+//allprojects {
+//    repositories {
+//        google()
+//        mavenCentral()
+//        maven { url 'https://jitpack.io' }
+//    }
+//}
+//
+//dependencies {
+//    implementation 'com.github.smirnov223113:orbot-service-android:-SNAPSHOT'
+//}
